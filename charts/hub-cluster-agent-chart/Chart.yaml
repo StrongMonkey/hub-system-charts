@@ -1,0 +1,4 @@
+apiVersion: v1
+name: hub-cluster-agent-chart
+description: Installs cluster agent on hub
+version: 0.0.1

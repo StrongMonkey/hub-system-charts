@@ -1,0 +1,4 @@
+apiVersion: v1
+name: aws-identity-chart
+description: Installs aws identity pod webhook on hub
+version: 0.0.1

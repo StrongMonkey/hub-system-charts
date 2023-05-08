@@ -1,0 +1,15 @@
+apiVersion: internal.admin.acorn.io/v1
+default: true
+description: Project compute class for Hub resources
+kind: ProjectComputeClassInstance
+metadata:
+  name: hub-acorn
+  namespace: acorn
+supportedRegions: ["local"]
+affinity:
+  nodeAffinity:
+    requiredDuringSchedulingIgnoredDuringExecution:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: "node-role.kubernetes.io/control-plane"
+              operator: "Exists"

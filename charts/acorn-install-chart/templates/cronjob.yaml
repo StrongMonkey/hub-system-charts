@@ -1,0 +1,24 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: acorn-install
+  namespace: acorn-system
+spec:
+  schedule: "*/2 * * * *"
+  successfulJobsHistoryLimit: 2
+  failedJobsHistoryLimit: 2
+  jobTemplate:
+    spec:
+      activeDeadlineSeconds: 60
+      template:
+        spec:
+          containers:
+            - name: acorn-init
+              image: "ghcr.io/acorn-io/acorn:{{ .Values.acornTag }}"
+              imagePullPolicy: Always
+              command: ["acorn", "init", "--skip-checks", "--controller-service-account-annotation", "eks.amazonaws.com/role-arn={{ .Values.acornManagedRoleArn }}"]
+          restartPolicy: Never
+          serviceAccountName: acorn-init
+          tolerations:
+            - key: node-role.kubernetes.io/control-plane
+              operator: "Exists"

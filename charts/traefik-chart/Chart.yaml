@@ -1,0 +1,4 @@
+apiVersion: v1
+name: traefik-chart
+description: Installs traefik on hub
+version: 0.0.1

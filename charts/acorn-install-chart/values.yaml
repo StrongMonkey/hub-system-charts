@@ -1,0 +1,17 @@
+# AWS account id used by service acorn
+awsAccountId: ""
+
+# AWS IAM role arn used by service acorn
+acornManagedRoleArn: ""
+
+# AWS OIDC provider arn used by service acorn
+awsIdentityProviderArn: "oidc"
+
+# VPC ID for the worker nodes to be created in
+targetVpcId: ""
+
+# The region to create the cluster in
+region: ""
+
+# Acorn tag to install in the cluster
+acornTag: "main"

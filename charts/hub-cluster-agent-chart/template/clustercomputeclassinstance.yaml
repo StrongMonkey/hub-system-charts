@@ -1,0 +1,8 @@
+apiVersion: internal.admin.acorn.io/v1
+cpuScaler: 0.25
+default: true
+description: Default offering
+kind: ClusterComputeClassInstance
+memory: {}
+metadata:
+  name: default

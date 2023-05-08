@@ -1,0 +1,4 @@
+apiVersion: v1
+name: istio-chart
+description: Installs istio on hub
+version: 0.0.1

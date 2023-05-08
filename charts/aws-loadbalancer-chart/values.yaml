@@ -1,0 +1,10 @@
+# The cluster name to identify the cluster
+clusterName: ""
+
+# VPC ID for the worker nodes to be created in
+targetVpcId: ""
+
+# The region to create the cluster in
+region: ""
+
+lbControllerRoleArn: ""

@@ -1,0 +1,4 @@
+apiVersion: v1
+name: aws-ebs-csi-chart
+description: Installs aws ebs csi driver on hub
+version: 0.0.1

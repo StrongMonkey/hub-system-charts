@@ -1,0 +1,45 @@
+apiVersion: monitoring.coreos.com/v1
+kind: Prometheus
+metadata:
+  name: prometheus
+  namespace: prometheus-operator
+spec:
+  serviceAccountName: prometheus
+  retention: "2h"
+  tolerations:
+    - key: taints.acorn.io/workload
+      operator: "Exists"
+  containers:
+    - name: prometheus
+      args:
+        - "--config.file=/etc/prometheus/config_out/prometheus.env.yaml"
+        - "--storage.agent.path=/prometheus"
+        - "--web.enable-lifecycle"
+        - "--enable-feature=agent"
+  remoteWrite:
+    - url: {{ .Values.prometheusRemoteWriteEndpoint }}
+      name: {{ .Values.clusterName }}
+      remoteTimeout: "5s"
+      sigv4:
+        region: {{ .Values.region }}
+        roleArn: {{ .Values.prometheusRemoteWriteRoleArn }}
+      queueConfig:
+        maxSamplesPerSend: 1000
+        maxShards: 200
+        capacity: 2500
+  resources:
+    requests:
+      memory: 1500Mi
+  enableAdminAPI: false
+  probeSelector:
+    matchLabels:
+      release: prometheus-operator
+  serviceMonitorSelector:
+    matchLabels:
+      release: prometheus-operator
+  podMonitorSelector:
+    matchLabels:
+      release: prometheus-operator
+  additionalScrapeConfigs:
+    key: config
+    name: istio-proxy-scrape-config

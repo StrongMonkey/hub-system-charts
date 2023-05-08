@@ -1,0 +1,25 @@
+apiVersion: helm.cattle.io/v1
+kind: HelmChart
+metadata:
+  name: cert-manager
+  namespace: cert-manager
+spec:
+  bootstrap: true
+  chart: https://charts.jetstack.io/charts/cert-manager-v1.11.0.tgz
+  valuesContent: |
+    installCRDs: true
+    tolerations:
+      - key: node-role.kubernetes.io/control-plane
+        operator: "Exists"
+    webhook:
+      tolerations:
+        - key: node-role.kubernetes.io/control-plane
+          operator: "Exists"
+    cainjector:
+      tolerations:
+        - key: node-role.kubernetes.io/control-plane
+          operator: "Exists"
+    startupapicheck:
+      tolerations:
+        - key: node-role.kubernetes.io/control-plane
+          operator: "Exists"

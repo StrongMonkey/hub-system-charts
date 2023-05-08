@@ -1,0 +1,4 @@
+apiVersion: v1
+name: aws-karpenter-resources-chart
+description: Installs aws karpenter resources(provisioner, nodetemplate) on hub
+version: 0.0.1

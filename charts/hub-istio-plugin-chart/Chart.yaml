@@ -1,0 +1,4 @@
+apiVersion: v1
+name: hub-istio-plugin-chart
+description: Installs istio plugin on hub
+version: 0.0.1

@@ -1,0 +1,7 @@
+# The cluster name to identify the cluster
+clusterName: ""
+
+# Cluster endpoint used by karpernter
+clusterEndpoint: ""
+
+karpenterRoleArn: ""

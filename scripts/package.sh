@@ -5,17 +5,10 @@ set -e -x
 cd docs/
 
 # Clean up old packages
-rm ./*
-
-# Package base chart
-helm package ../
+rm ./* || true
 
 # Package subcharts
-packages=(
-  "../charts/aws-cloud-controller-manager"
-  "../charts/istio/istiod"
-)
-for package in "${packages[@]}"; do
+for package in ../charts/*; do
   helm package "$package"
   pushd "$package"
   helm dep up

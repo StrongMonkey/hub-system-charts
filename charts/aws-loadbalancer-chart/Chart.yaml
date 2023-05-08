@@ -1,0 +1,4 @@
+apiVersion: v1
+name: aws-loadbalancer-chart
+description: Installs aws loadbalancer controller on hub
+version: 0.0.1

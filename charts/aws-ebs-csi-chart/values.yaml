@@ -1,0 +1,8 @@
+# The cluster name to identify the cluster
+clusterName: ""
+
+# The region to create the cluster in
+region: ""
+
+# IAM roles used by ebs csi driver
+ebsCsiRoleArn: ""

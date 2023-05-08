@@ -1,0 +1,4 @@
+apiVersion: v1
+name: aws-karpenter-chart
+description: Installs aws karpenter on hub
+version: 0.0.1

@@ -1,0 +1,8 @@
+# Subnet ids for worker nodes to be created in
+subnetIds: ""
+
+# The cluster name to identify the cluster
+clusterName: ""
+
+# The region to create the cluster in
+region: ""

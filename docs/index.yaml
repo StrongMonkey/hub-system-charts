@@ -1,11 +1,20 @@
 apiVersion: v1
 entries:
+  acorn-install:
+  - apiVersion: v1
+    created: "2023-05-08T15:04:46.551334-07:00"
+    description: Installs Acorn on hub
+    digest: aebf6de2359bc54e4946a320b3bf3b56561788a2ffde31df6f1e964ee9ec290c
+    name: acorn-install
+    urls:
+    - https://acorn-io.github.io/hub-system-charts/acorn-install-0.0.1.tgz
+    version: 0.0.1
   aws-cloud-controller-manager:
   - apiVersion: v1
     appVersion: v1.23.0-alpha.0
-    created: "2023-05-08T13:54:26.688903-04:00"
+    created: "2023-05-08T15:04:46.551701-07:00"
     description: Installs Cloud Controller Manager for AWS Cloud Provider
-    digest: 76d6b44b32aaff2673d1c5935ffd51ec1a3d417e3b7cd93e1bfae5451416598e
+    digest: d063daa61ab1d378489a83a8b1f8687b413673fbf9a9ded9f2c6bf81898700c9
     maintainers:
     - email: nic@amazon.com
       name: Nick Turner
@@ -13,25 +22,111 @@ entries:
     urls:
     - https://acorn-io.github.io/hub-system-charts/aws-cloud-controller-manager-0.0.7.tgz
     version: 0.0.7
-  hub-system-charts:
+  aws-cloud-controller-manager-chart:
   - apiVersion: v1
-    appVersion: v0.0.1
-    created: "2023-05-08T13:54:26.694097-04:00"
-    description: System chart for acorn hub controlplane
-    digest: 9b08cea36514a3cd7695a892955423d32ec4ec7ec4291323cfa00b74f2332cb4
-    maintainers:
-    - email: daishan@acorn.io
-      name: Daishan Peng
-    name: hub-system-charts
+    created: "2023-05-08T15:04:46.551773-07:00"
+    description: Installs aws cloud controller manager on hub
+    digest: 054064ac687cc4fbf370be84818410741e4ef3b14a82dec3441bcf4a09503769
+    name: aws-cloud-controller-manager-chart
     urls:
-    - https://acorn-io.github.io/hub-system-charts/hub-system-charts-0.0.1.tgz
+    - https://acorn-io.github.io/hub-system-charts/aws-cloud-controller-manager-chart-0.0.1.tgz
+    version: 0.0.1
+  aws-ebs-csi-chart:
+  - apiVersion: v1
+    created: "2023-05-08T15:04:46.551861-07:00"
+    description: Installs aws ebs csi driver on hub
+    digest: fda02a7409a6bfcb5510b2dbf5967a59330535f817e91ef186188da96cb6e6ab
+    name: aws-ebs-csi-chart
+    urls:
+    - https://acorn-io.github.io/hub-system-charts/aws-ebs-csi-chart-0.0.1.tgz
+    version: 0.0.1
+  aws-identity-chart:
+  - apiVersion: v1
+    created: "2023-05-08T15:04:46.552182-07:00"
+    description: Installs aws identity pod webhook on hub
+    digest: 80edade536e238db974cd4a19c9067e8d010d6419444fbe94c452050ac0b0b27
+    name: aws-identity-chart
+    urls:
+    - https://acorn-io.github.io/hub-system-charts/aws-identity-chart-0.0.1.tgz
+    version: 0.0.1
+  aws-karpenter-chart:
+  - apiVersion: v1
+    created: "2023-05-08T15:04:46.552324-07:00"
+    description: Installs aws karpenter on hub
+    digest: 82e02cbaae880f8324673fc4e345bfdba99bb5d8d21b4bcf6b8727d8ea9d467d
+    name: aws-karpenter-chart
+    urls:
+    - https://acorn-io.github.io/hub-system-charts/aws-karpenter-chart-0.0.1.tgz
+    version: 0.0.1
+  aws-karpenter-resources-chart:
+  - apiVersion: v1
+    created: "2023-05-08T15:04:46.552576-07:00"
+    description: Installs aws karpenter resources(provisioner, nodetemplate) on hub
+    digest: 9f4d81d8f62ea0fb605060594bfc017471f4230a933e4eb9d6bb39fefe6310ba
+    name: aws-karpenter-resources-chart
+    urls:
+    - https://acorn-io.github.io/hub-system-charts/aws-karpenter-resources-chart-0.0.1.tgz
+    version: 0.0.1
+  aws-loadbalancer-chart:
+  - apiVersion: v1
+    created: "2023-05-08T15:04:46.552664-07:00"
+    description: Installs aws loadbalancer controller on hub
+    digest: 2d0f10633c4524034e724c9ad71f693efc73de47f6a300a68b9ad7a8a6edfcac
+    name: aws-loadbalancer-chart
+    urls:
+    - https://acorn-io.github.io/hub-system-charts/aws-loadbalancer-chart-0.0.1.tgz
+    version: 0.0.1
+  cert-manager-chart:
+  - apiVersion: v1
+    created: "2023-05-08T15:04:46.55274-07:00"
+    description: Installs cert manager on hub
+    digest: 49f2c50cfaf6234048c22e5c28a74f3cfc3ebd573f7e683cd1d2f7eb0d0e06ad
+    name: cert-manager-chart
+    urls:
+    - https://acorn-io.github.io/hub-system-charts/cert-manager-chart-0.0.1.tgz
+    version: 0.0.1
+  coredns-chart:
+  - apiVersion: v1
+    created: "2023-05-08T15:04:46.552841-07:00"
+    description: Installs coredns on hub
+    digest: 31bf7143f82c6eda383f2a1372f55584bb5532c126292926e0f9d85043f442a2
+    name: coredns-chart
+    urls:
+    - https://acorn-io.github.io/hub-system-charts/coredns-chart-0.0.1.tgz
+    version: 0.0.1
+  hub-cluster-agent-chart:
+  - apiVersion: v1
+    created: "2023-05-08T15:04:46.55294-07:00"
+    description: Installs cluster agent on hub
+    digest: 219771551cf7a7bc3cf0a59da8e0d27617d365af2fa83a77613847bafd600bdf
+    name: hub-cluster-agent-chart
+    urls:
+    - https://acorn-io.github.io/hub-system-charts/hub-cluster-agent-chart-0.0.1.tgz
+    version: 0.0.1
+  hub-istio-plugin-chart:
+  - apiVersion: v1
+    created: "2023-05-08T15:04:46.553003-07:00"
+    description: Installs istio plugin on hub
+    digest: 60361be55edf09518f1c3dafcafaf368f2e5c0574de3c7e3a302d7b36e0eb33b
+    name: hub-istio-plugin-chart
+    urls:
+    - https://acorn-io.github.io/hub-system-charts/hub-istio-plugin-chart-0.0.1.tgz
+    version: 0.0.1
+  istio-chart:
+  - apiVersion: v1
+    created: "2023-05-08T15:04:46.553072-07:00"
+    description: Installs istio on hub
+    digest: 948ecb204dfe9c1587f87c463139470023ca32d2ea54753221d639959a8335f1
+    name: istio-chart
+    urls:
+    - https://acorn-io.github.io/hub-system-charts/istio-chart-0.0.1.tgz
     version: 0.0.1
   istiod:
   - apiVersion: v1
     appVersion: 1.17.1
-    created: "2023-05-08T13:54:26.696023-04:00"
+    created: "2023-05-08T15:04:46.554311-07:00"
     description: Helm chart for istio control plane
-    digest: 336f3400c860089c7b59d415db1625f77d4f3fe26847846c0d7101c0b71a8796
+    digest: 91b0da1346f32da3fedc58b603a7c79aa3f4c417c1fe34ea3fc0de5a61d27da9
     icon: https://istio.io/latest/favicons/android-192x192.png
     keywords:
     - istio
@@ -43,4 +138,31 @@ entries:
     urls:
     - https://acorn-io.github.io/hub-system-charts/istiod-1.17.1.tgz
     version: 1.17.1
-generated: "2023-05-08T13:54:26.688054-04:00"
+  prometheus-chart:
+  - apiVersion: v1
+    created: "2023-05-08T15:04:46.554397-07:00"
+    description: Installs prometheus on hub
+    digest: dde2bd26013d5c063cbeacef6cf7ce8b162932359bb3dec73484c6fb37e28f30
+    name: prometheus-chart
+    urls:
+    - https://acorn-io.github.io/hub-system-charts/prometheus-chart-0.0.1.tgz
+    version: 0.0.1
+  prometheus-instance-chart:
+  - apiVersion: v1
+    created: "2023-05-08T15:04:46.554506-07:00"
+    description: Installs prometheus resources on hub
+    digest: 18567d3087268702eeaee48c313668688542c29a799489b088611707d8676166
+    name: prometheus-instance-chart
+    urls:
+    - https://acorn-io.github.io/hub-system-charts/prometheus-instance-chart-0.0.1.tgz
+    version: 0.0.1
+  traefik-chart:
+  - apiVersion: v1
+    created: "2023-05-08T15:04:46.554587-07:00"
+    description: Installs traefik on hub
+    digest: b3ace30b55f82659cd31f8920aa34b8724e6cddf186b82295fbd5705ac2dd451
+    name: traefik-chart
+    urls:
+    - https://acorn-io.github.io/hub-system-charts/traefik-chart-0.0.1.tgz
+    version: 0.0.1
+generated: "2023-05-08T15:04:46.55115-07:00"

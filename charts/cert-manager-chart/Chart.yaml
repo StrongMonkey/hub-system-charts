@@ -1,0 +1,4 @@
+apiVersion: v1
+name: cert-manager-chart
+description: Installs cert manager on hub
+version: 0.0.1

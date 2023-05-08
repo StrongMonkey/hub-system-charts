@@ -1,0 +1,5 @@
+# The cluster name to identify the cluster
+clusterName: ""
+
+# IAM roles used by cloud-controller-manager
+ccmRoleArn: ""

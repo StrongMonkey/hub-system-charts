@@ -1,0 +1,4 @@
+apiVersion: v1
+name: acorn-install
+description: Installs Acorn on hub
+version: 0.0.1

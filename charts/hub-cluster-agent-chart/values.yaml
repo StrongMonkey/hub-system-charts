@@ -1,0 +1,11 @@
+# Cluster agent account url, token and name used by cluster agent
+clusterAgentAccountUrl: ""
+clusterAgentToken: ""
+clusterAgentAccountName: ""
+hubUrl: ""
+
+# The region to create the cluster in
+region: ""
+
+# Acorn tag to install in the cluster
+acornTag: "main"

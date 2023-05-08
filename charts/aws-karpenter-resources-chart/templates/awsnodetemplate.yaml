@@ -1,0 +1,13 @@
+apiVersion: karpenter.k8s.aws/v1alpha1
+kind: AWSNodeTemplate
+metadata:
+  name: worker-nodetemplate
+spec:
+  subnetSelector:
+    aws-ids: "{{ .Values.subnetIds }}"
+  launchTemplate: "launchtemplate-{{ .Values.clusterName }}"
+  tags:
+    Name: "launchtemplate-{{ .Values.clusterName }}"
+    karpenter.sh/provisioner-name: default
+    kubernetes.io/cluster/{{ .Values.clusterName }}: owned
+    karpenter.sh/discovery: {{ .Values.clusterName }}

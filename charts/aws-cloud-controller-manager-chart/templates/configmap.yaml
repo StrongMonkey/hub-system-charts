@@ -1,0 +1,11 @@
+apiVersion: v1
+data:
+  cloudconfig: |
+    [global]
+      VPC = "fake"
+      SubnetID = "fake"
+      KubernetesClusterID = {{ .Values.clusterName }}
+kind: ConfigMap
+metadata:
+  name: aws-cloud-config
+  namespace: kube-system

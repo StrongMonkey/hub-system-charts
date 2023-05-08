@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: acorn-config
+  namespace: acorn-system
+data:
+  config: |
+    {
+      "acornDNS": "enabled",
+      "letsEncrypt": "enabled",
+      "letsEncryptTosAgree": true,
+      "letsEncryptEmail": "domains@acorn.io",
+      "checks": "false",
+      "skipChecks": "true",
+      "builderPerNamespace": true,
+      "builderPerProject": true,
+      "publishBuilders": true,
+      "internalRegistryPrefix": "null.acrn.io/",
+      "ingressControllerNamespace": "traefik",
+      "propagateProjectLabels": ["istio-injection"],
+      "serviceLBAnnotations": [
+        "service.beta.kubernetes.io/aws-load-balancer-type=external",
+        "service.beta.kubernetes.io/aws-load-balancer-scheme=internet-facing",
+        "service.beta.kubernetes.io/aws-load-balancer-nlb-target-type=instance"
+      ],
+      "manageVolumeClasses": true,
+      "awsIdentityProviderArn": {{ .Values.awsIdentityProviderArn | quote }},
+      "allowTrafficFromNamespace": ["prometheus-operator"]
+    }
